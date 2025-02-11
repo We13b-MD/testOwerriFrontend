@@ -177,7 +177,8 @@
 
     const dailyData = {
       imp: parseInt(localStorage.getItem('impressions')) || 0,
-      clicks: parseInt(localStorage.getItem('clicks')) || 0
+      clicks: parseInt(localStorage.getItem('clicks')) || 0,
+      deviceType:getDeviceType()
     }
 
 
@@ -221,8 +222,7 @@
       dailyData.imp = 0; // Reset local variable
       dailyData.clicks = 0;
       console.log('Impressions reset. Start fresh:', dailyData);
-  
-    }
+}
 
     
 sendDailyData()  
