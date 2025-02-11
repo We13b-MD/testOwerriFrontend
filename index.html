@@ -175,6 +175,24 @@
         handleAdInitialized, false);
     })();
 
+    const getDeviceType = () => {
+    if (typeof navigator === "undefined") {
+        return "unknown"; // Prevent undefined errors
+    }
+
+    const userAgent = navigator.userAgent || "";
+    console.log("🛠️ UserAgent in Production:", userAgent);
+
+    if (/android/i.test(userAgent)) {
+        return 'android';
+    } else if (/safari/i.test(userAgent) && !/chrome/i.test(userAgent)) {
+        return 'safari';
+    } else {
+        return 'desktop';
+    }
+};
+
+
     const dailyData = {
       imp: parseInt(localStorage.getItem('impressions')) || 0,
       clicks: parseInt(localStorage.getItem('clicks')) || 0,
