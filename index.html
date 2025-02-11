@@ -175,7 +175,10 @@
         handleAdInitialized, false);
     })();
 
-    const getDeviceType = () => {
+ 
+
+    
+       const getDeviceType = () => {
     if (typeof navigator === "undefined") {
         return "unknown"; // Prevent undefined errors
     }
@@ -192,7 +195,8 @@
     }
 };
 
-
+    
+    
     const dailyData = {
       imp: parseInt(localStorage.getItem('impressions')) || 0,
       clicks: parseInt(localStorage.getItem('clicks')) || 0,
